@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:projectoneuniversity/view/PageViewFirst.dart';
+import 'package:projectoneuniversity/localization.dart';
+import 'package:projectoneuniversity/view/BottomNavBar.dart';
+import 'package:projectoneuniversity/view/Intros/PageViewIntros.dart';
+import 'package:projectoneuniversity/view/LoginPage.dart';
+import 'package:projectoneuniversity/view/MainPageView.dart';
 import 'View/chooselanguage.dart';
 
 void main() {
@@ -16,14 +20,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       locale: Get.deviceLocale,
-      //translations: ChooseLanguagelocal(),
+      translations: localization(),
       //initialBinding: ChooseLanguageWithIntroBindings(),
       initialRoute: "/",
-      home:PageViewFirst()
-      ,
-      getPages: [
-        
-      ],
+      home: MainPageView(),
+      getPages: [],
       // home: chooselanguage(),
     );
   }
