@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/controller/NavigationController.dart';
-import 'package:projectoneuniversity/core/constants/colors.dart';
 
 class BottomNavBar extends StatelessWidget {
   final NavigationController navigationController =
