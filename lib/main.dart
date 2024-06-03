@@ -1,31 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:projectoneuniversity/localization.dart';
-import 'package:projectoneuniversity/view/BottomNavBar.dart';
-import 'package:projectoneuniversity/view/Intros/PageViewIntros.dart';
-import 'package:projectoneuniversity/view/LoginPage.dart';
-import 'package:projectoneuniversity/view/MainPageView.dart';
-import 'View/chooselanguage.dart';
+import 'package:projectoneuniversity/controller/dark_mode.dart';
+import 'package:projectoneuniversity/core/localization.dart';
+import 'package:projectoneuniversity/core/services/services.dart';
+import 'package:projectoneuniversity/core/themes/app_theme.dart';
+import 'package:projectoneuniversity/view/screens/MainPageView.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initialServices();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      locale: Get.deviceLocale,
-      translations: localization(),
-      //initialBinding: ChooseLanguageWithIntroBindings(),
-      initialRoute: "/",
-      home: MainPageView(),
-      getPages: [],
-      // home: chooselanguage(),
+     ScreenUtil.init(context);
+     DarkModeImpl themeController = Get.put(DarkModeImpl());
+    //ChangeLanguage controller = Get.put(ChangeLanguage());
+    return ScreenUtilInit(
+        designSize: const Size(320, 790),
+      child: GetMaterialApp(
+
+        debugShowCheckedModeBanner: false,
+        themeMode: themeController.themeMode,
+          theme: AppTheme.light,
+          darkTheme: AppTheme.dark,
+        locale: Get.deviceLocale,
+        translations: localization(),
+        initialRoute: "/",
+        home: MainPageView(),
+        getPages: [],
+        // home: chooselanguage(),
+      ),
     );
   }
 }

@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\flutter"
-export "FLUTTER_APPLICATION_PATH=C:\Users\yamen\Desktop\flutterProject\projectoneuniversity"
+export "FLUTTER_ROOT=C:\src\Flutter.Windows_2.8.0.stable"
+export "FLUTTER_APPLICATION_PATH=C:\Users\ASUS\Desktop\dashboard\jobLanc-dashboard"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"

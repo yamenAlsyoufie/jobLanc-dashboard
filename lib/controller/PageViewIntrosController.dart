@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:projectoneuniversity/view/Intros/introFiveSettings.dart';
-import 'package:projectoneuniversity/view/Intros/introFourAddCategory.dart';
-import 'package:projectoneuniversity/view/Intros/introOneHomePage.dart';
-import 'package:projectoneuniversity/view/Intros/introThreeWallet.dart';
-import 'package:projectoneuniversity/view/Intros/introTwoStatistics.dart';
+
+import 'package:projectoneuniversity/view/screens/Intros/introFiveSettings.dart';
+import 'package:projectoneuniversity/view/screens/Intros/introFourAddCategory.dart';
+import 'package:projectoneuniversity/view/screens/Intros/introOneHomePage.dart';
+import 'package:projectoneuniversity/view/screens/Intros/introThreeWallet.dart';
+import 'package:projectoneuniversity/view/screens/Intros/introTwoStatistics.dart';
 
 class PageViewIntrosController extends GetxController
 {

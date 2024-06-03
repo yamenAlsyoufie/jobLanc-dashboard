@@ -6,6 +6,7 @@ class Mainhomepagecontroller extends GetxController {
   var selectedIndex = 0.obs;
   PageController pageController = PageController();
   @override
+  // ignore: override_on_non_overriding_member
   void changePage(int index) {
     selectedIndex.value = index;
     pageController.jumpToPage(index);
