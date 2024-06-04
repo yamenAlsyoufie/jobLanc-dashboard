@@ -5,6 +5,7 @@ import 'package:projectoneuniversity/controller/SettingsPageViewController.dart'
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/core/functions/dimenesions.dart';
 import 'package:projectoneuniversity/view/screens/CategoriesPage.dart';
+import 'package:projectoneuniversity/view/screens/ReportsPage.dart';
 import 'package:projectoneuniversity/view/widgets/divider.dart';
 import 'package:projectoneuniversity/view/widgets/list_tile.dart';
 
@@ -140,10 +141,15 @@ class SettingsPageView extends StatelessWidget {
                       trailingIcon: Icons.arrow_forward_ios,
                       listText: "33".tr),
                   MyDivider(),
-                  ListTiles(
-                      leadingIcon: null,
-                      trailingIcon: Icons.arrow_forward_ios,
-                      listText: "34".tr),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(ReportsPage());
+                    },
+                    child: ListTiles(
+                        leadingIcon: null,
+                        trailingIcon: Icons.arrow_forward_ios,
+                        listText: "34".tr),
+                  ),
                 ],
               ),
             )

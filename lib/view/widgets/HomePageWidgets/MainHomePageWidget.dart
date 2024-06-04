@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:projectoneuniversity/controller/MainHomePageController.dart';
 import 'package:projectoneuniversity/data/Statics/static.dart';
 
+// ignore: must_be_immutable
 class MainHomePageWidget extends StatelessWidget {
   Mainhomepagecontroller controller = Get.put(Mainhomepagecontroller());
   //overView for app

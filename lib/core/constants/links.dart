@@ -12,5 +12,6 @@ class AppLinks {
   static String get task => "$IP/api/task";
   static String get company => "$IP/api/company";
   static String get category => "$IP/api/major";
+  static String get reports => "$IP/api/reports";
   
 }

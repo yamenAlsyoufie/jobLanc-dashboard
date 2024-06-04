@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/controller/dark_mode.dart';
 import 'package:projectoneuniversity/core/localization.dart';
+import 'package:projectoneuniversity/core/middlewere/midlleware.dart';
 import 'package:projectoneuniversity/core/services/services.dart';
 import 'package:projectoneuniversity/core/themes/app_theme.dart';
+import 'package:projectoneuniversity/view/screens/LoginPage.dart';
 import 'package:projectoneuniversity/view/screens/MainPageView.dart';
 
 void main() async {
@@ -30,9 +32,17 @@ class MyApp extends StatelessWidget {
           darkTheme: AppTheme.dark,
         locale: Get.deviceLocale,
         translations: localization(),
+      
         initialRoute: "/",
-        home: MainPageView(),
-        getPages: [],
+        
+        getPages: [GetPage(
+              name: "/",
+              page: () => LoginPage(),
+               middlewares: [MiddleWare()]
+            ),
+            GetPage(name: "/HomePage", page: () => MainPageView()),
+            GetPage(name: "/Login", page: () => LoginPage()),
+            ],
         // home: chooselanguage(),
       ),
     );

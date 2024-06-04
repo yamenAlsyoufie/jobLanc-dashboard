@@ -55,7 +55,18 @@ class localization extends Translations {
           "31":"Job Types",
           "32":"Add Skill",
           "33":"Logout",
-          "34":"Reports"
+          "34":"Reports",
+          //Categories page
+          "35":"Category name",
+          "36":"Add image",
+          "37":"Confirm",
+          //Reports
+          "38":"Reply Report",
+          "39":"Reply title",
+          "40":"Reply body",
+          "41":"Your reply has ben sent",
+          "42":"Could not send reply",
+          "43":"Send"
         },
         'ar': {
           //choose language page in arabic

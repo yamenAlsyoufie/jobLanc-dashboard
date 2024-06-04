@@ -13,6 +13,7 @@ class BottomNavBar extends StatelessWidget {
             BottomNavigationBarItem(
               icon: Icon(Icons.bar_chart),
               label: 'Statistics',
+              backgroundColor: Color.fromARGB(248, 18, 19, 33),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -22,11 +23,12 @@ class BottomNavBar extends StatelessWidget {
             BottomNavigationBarItem(
               icon: Icon(Icons.account_balance_wallet),
               label: 'Wallet',
+              backgroundColor: Color.fromARGB(248, 18, 19, 33),
             ),
-            
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
               label: 'Settings',
+              backgroundColor: Color.fromARGB(248, 18, 19, 33),
             ),
           ],
           unselectedItemColor: Colors.white,

@@ -8,9 +8,9 @@ import 'package:projectoneuniversity/core/functions/alerts.dart';
 import 'package:projectoneuniversity/core/functions/handeling_data.dart';
 import 'package:projectoneuniversity/core/services/services.dart';
 import 'package:projectoneuniversity/data/remote/login_back.dart';
+import 'package:projectoneuniversity/view/screens/MainPageView.dart';
 
 import '../core/constants/animations.dart';
-
 
 abstract class LogiInController extends GetxController {
   logIn();
@@ -22,14 +22,14 @@ class LogInControllerImpl extends LogiInController {
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   late TextEditingController emailController;
   late TextEditingController passwordController;
-  late TextEditingController ip = new TextEditingController();
+  // late TextEditingController ip = new TextEditingController();
   late TextEditingController phoneController;
   LoginBack loginBata = LoginBack(Get.put(Crud()));
   StatusRequest? statusRequest;
   Myservices myServices = Get.find();
   bool isshown = true;
   double containerWidth = 300.w;
-  String deviceToken = "";
+  String deviceToken = "da";
 
   @override
   goToHomePage() {
@@ -47,29 +47,32 @@ class LogInControllerImpl extends LogiInController {
     myServices.sharedPreferences.setInt("id", data["id"]);
     myServices.sharedPreferences.setString("token", data["accessToken"]);
     myServices.sharedPreferences.setString("step", "2");
-    myServices.sharedPreferences.setString("ip", ip.text);
+    //myServices.sharedPreferences.setString("ip", ip.text);
   }
 
   @override
   logIn() async {
     var formdata = formState.currentState;
     if (formdata!.validate()) {
-      AppLinks.IP = ip.text;
+      // AppLinks.IP = ip.text;
       statusRequest = StatusRequest.loading;
       animationedAlert(AppAnimations.loadings, "pleasewait".tr);
       var response = await loginBata.login({
         "email": emailController.text,
         "password": passwordController.text,
-        "device_token": deviceToken
+        "device_token": "da"
       });
       statusRequest = handelingData(response);
       Get.back();
-
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
+          if (response['data']['role_id'] != 1) {
+            animationedAlert(AppAnimations.wrong, "wronglogin".tr);
+            return;
+          }
           saveUserData(response['data']);
-          Get.offNamed("HomePage");
-        }else {
+          Get.off(MainPageView());
+        } else {
           animationedAlert(AppAnimations.wrong, "wronglogin".tr);
           update();
         }
@@ -87,13 +90,10 @@ class LogInControllerImpl extends LogiInController {
     super.dispose();
   }
 
-
   @override
   void onInit() {
     emailController = TextEditingController();
     passwordController = TextEditingController();
     super.onInit();
   }
-
-  
 }
