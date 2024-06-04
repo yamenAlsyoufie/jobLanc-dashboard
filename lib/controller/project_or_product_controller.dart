@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/core/class/crud.dart';
@@ -11,9 +10,9 @@ import 'package:projectoneuniversity/core/services/services.dart';
 
 import '../data/remote/add_project_or_product_back.dart';
 
-
 abstract class ProjectScreenController extends GetxController {
   getData();
+  deleteData();
 }
 
 class ProjectScreenControllerImpl extends ProjectScreenController {
@@ -26,8 +25,7 @@ class ProjectScreenControllerImpl extends ProjectScreenController {
   StatusRequest? statusRequest, updateStatus;
   late String role, token;
   List<Map> images = [];
-
-  List deletedImages = [], imagesId = [];
+  List imagesId = [];
   AddProjectOrProductBack addProjectOrProductBack =
       new AddProjectOrProductBack(Get.put(Crud()));
   GlobalKey<FormState> formState = GlobalKey<FormState>();
@@ -54,6 +52,7 @@ class ProjectScreenControllerImpl extends ProjectScreenController {
     super.onInit();
   }
 
+  @override
   void dispose() {
     title.dispose();
     description.dispose();
@@ -61,10 +60,11 @@ class ProjectScreenControllerImpl extends ProjectScreenController {
     super.dispose();
   }
 
+  @override
   getData() async {
     statusRequest = StatusRequest.loading;
     var response = await addProjectOrProductBack
-        .getData({}, AppLinks.project + "/" + projectId.toString(), token);
+        .getData({}, "${AppLinks.project}/$projectId", token);
     statusRequest = handelingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
@@ -83,6 +83,7 @@ class ProjectScreenControllerImpl extends ProjectScreenController {
     update();
   }
 
+  @override
   deleteData() async {
     Get.back();
     var response =
@@ -94,9 +95,8 @@ class ProjectScreenControllerImpl extends ProjectScreenController {
       } else {
         animationedAlert(AppAnimations.wrong, "couldn'tdelete".tr);
       }
-    }else{
+    } else {
       animationedAlert(AppAnimations.wrong, "couldn'tdelete".tr);
     }
   }
-
 }

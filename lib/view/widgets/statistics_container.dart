@@ -6,7 +6,7 @@ import 'package:projectoneuniversity/core/functions/dimenesions.dart';
 
 class StatisticsContainer extends StatelessWidget {
   final String title;
-  final String content;
+  final  content;
   const StatisticsContainer(
       {super.key, required this.title, required this.content});
 
@@ -14,7 +14,7 @@ class StatisticsContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(8.w),
+      padding: EdgeInsets.all(10.w),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Theme.of(context).colorScheme.primaryContainer,
@@ -32,16 +32,12 @@ class StatisticsContainer extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyles.w50014(context),
+            style: TextStyles.w50012(context),
           ),
           SizedBox(
             height: 5.h,
           ),
-          Text(
-            content,
-            style:
-                TextStyle(color: LightAppColors.primaryColor, fontSize: 14.sp),
-          ),
+          content
         ],
       ),
     );

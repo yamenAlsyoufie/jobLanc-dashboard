@@ -55,10 +55,12 @@ class FreeLancerDesign extends StatelessWidget {
                     height: 45,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(30),
-                      child: Image.network(
-                        image[0] == "h" ? image : AppLinks.IP  + image,
-                        fit: BoxFit.cover,
-                      ),
+                      child: 
+                      // Image.network(
+                      //   image[0] == "h" ? image : AppLinks.IP  + image,
+                      //   fit: BoxFit.cover,
+                      // ),
+                      Image.asset(image)
                     ),
                   ),
                   SizedBox(

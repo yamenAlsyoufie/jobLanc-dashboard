@@ -43,7 +43,19 @@ class localization extends Translations {
           '20': 'Number of Company in your app is:',
           '21': 'Number of tasks in your app is:',
           '22':'Company Jobs',
-          '23':'Tasks'
+          '23':'Tasks',
+          //Settings page
+          "24":"Account",
+          "25":"App settings",
+          "26":"General",
+          "27":"Dark mode",
+          "28":"Language",
+          "29":"Change password",
+          "30":"Categories",
+          "31":"Job Types",
+          "32":"Add Skill",
+          "33":"Logout",
+          "34":"Reports"
         },
         'ar': {
           //choose language page in arabic

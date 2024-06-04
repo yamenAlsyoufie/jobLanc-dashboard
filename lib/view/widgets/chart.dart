@@ -1,5 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:projectoneuniversity/core/constants/colors.dart';
 
 class Chart extends StatelessWidget {
   final double ordersFirstWeek;
@@ -17,7 +20,8 @@ class Chart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BarChart(BarChartData(
-        gridData: FlGridData(
+        backgroundColor: Theme.of(context).colorScheme.background,
+        gridData: const FlGridData(
             drawHorizontalLine: true,
             drawVerticalLine: false,
             horizontalInterval: 5),
@@ -25,7 +29,7 @@ class Chart extends StatelessWidget {
             border: const Border(
                 bottom: BorderSide(width: 2), left: BorderSide(width: 2))),
         titlesData: FlTitlesData(
-          leftTitles: AxisTitles(
+          leftTitles: const AxisTitles(
             sideTitles: SideTitles(showTitles: true, reservedSize: 30),
             axisNameSize: 25,
             // axisNameWidget: Text(
@@ -34,13 +38,15 @@ class Chart extends StatelessWidget {
             // )
           ),
           bottomTitles: AxisTitles(
-            sideTitles: SideTitles(showTitles: true, reservedSize: 30),
-            axisNameSize: 27,
-            // axisNameWidget: Text(
-            //   "week".tr,
-            //   style: TextStyle(fontSize: 12.sp),
-            // )
-          ),
+              sideTitles: SideTitles(showTitles: true, reservedSize: 30),
+              axisNameSize: 27,
+              axisNameWidget: Padding(
+                padding: EdgeInsets.only(top: 10.h),
+                child: Text(
+                  "week".tr,
+                  style: TextStyle(fontSize: 12.sp),
+                ),
+              )),
           topTitles: const AxisTitles(
               sideTitles: SideTitles(showTitles: false, reservedSize: 30),
               axisNameSize: 22),
