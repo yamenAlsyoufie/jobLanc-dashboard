@@ -6,7 +6,7 @@ import '../services/services.dart';
 class MiddleWare extends GetMiddleware {
   @override
   int? get priority => 1;
-  Myservices myservices = Get.find();
+  SharedPrefrencesServices myservices = Get.find();
   RouteSettings? redirect(String? route) {
     if (myservices.sharedPreferences.getString("step") == "2") {
       return const RouteSettings(name: "HomePage");

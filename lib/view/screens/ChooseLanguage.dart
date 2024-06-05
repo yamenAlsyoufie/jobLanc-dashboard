@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:projectoneuniversity/controller/ChooseLanguageController.dart';
 import 'package:projectoneuniversity/data/Statics/static.dart';
 import 'package:projectoneuniversity/view/screens/Intros/PageViewIntros.dart';
 import 'package:projectoneuniversity/view/widgets/LanguageButton%20.dart';
 
 // ignore: must_be_immutable, use_key_in_widget_constructors
 class ChooseLanguage extends StatelessWidget {
-  ChooseLanguageController controller = Get.put(ChooseLanguageController());
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

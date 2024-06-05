@@ -30,7 +30,7 @@ class ProjectScreenControllerImpl extends ProjectScreenController {
       new AddProjectOrProductBack(Get.put(Crud()));
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   late int userId;
-  Myservices myServices = Get.find();
+  SharedPrefrencesServices myServices = Get.find();
   ProjectScreenControllerImpl(this.context,
       {required this.projectId, required this.id});
 

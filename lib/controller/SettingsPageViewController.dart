@@ -7,7 +7,7 @@ abstract class SettingsPageViewController extends GetxController {
 }
 
 class SettingsPageViewControllerImpl extends SettingsPageViewController {
-  Myservices myServices = Get.find();
+  SharedPrefrencesServices myServices = Get.find();
   late ThemeMode themeMode;
   late bool isDarkMode;
   @override

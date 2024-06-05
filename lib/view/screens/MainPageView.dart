@@ -21,7 +21,7 @@ class MainPageView extends StatelessWidget {
           navigationController.selectedIndex.value = index;
         },
         children: [
-          statisticsPageView(),
+          StatisticsPageView(),
           HomePageView(),
           WalletPageView(),
           SettingsPageView()

@@ -1,9 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class localization extends Translations {
-  static Locale? get locale => Get.deviceLocale;
-  static const fallbackLocale = Locale('en', 'US');
   @override
   Map<String, Map<String, String>> get keys => {
         'en': {
@@ -66,7 +63,10 @@ class localization extends Translations {
           "40":"Reply body",
           "41":"Your reply has ben sent",
           "42":"Could not send reply",
-          "43":"Send"
+          "43":"Send",
+          //login
+          "44":"Wrong email or password",
+          "45":"Error while logging in"
         },
         'ar': {
           //choose language page in arabic

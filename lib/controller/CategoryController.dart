@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -19,22 +18,19 @@ abstract class CategoryController extends GetxController {
 }
 
 class CategoryControllerImpl extends CategoryController {
-  Myservices myServices = Get.find();
+  SharedPrefrencesServices myServices = Get.find();
   GlobalKey<FormState> formState = GlobalKey<FormState>();
-
   Categoryback categoryback = new Categoryback(Get.put(Crud()));
-  late String token;
-  late String language;
-  StatusRequest? statusRequest, addCategoryStatus;
   TextEditingController name = new TextEditingController();
+  late String token, language;
+  StatusRequest? statusRequest, addCategoryStatus;
   List<CategoryModel> categories = [];
   bool isAdding = false;
   var image;
   @override
   void onInit() {
-    token = myServices.sharedPreferences.getString("token")!
-    ;
-    // language = myServices.sharedPreferences.getString("lang")!;
+    token = myServices.sharedPreferences.getString("token")!;
+    language = myServices.sharedPreferences.getString("lang")!;
     getCategories();
     super.onInit();
   }
@@ -42,7 +38,7 @@ class CategoryControllerImpl extends CategoryController {
   @override
   getCategories() async {
     statusRequest = StatusRequest.loading;
-    var response = await categoryback.getCategories(token, "en");
+    var response = await categoryback.getCategories(token, language);
     statusRequest = handelingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
@@ -81,10 +77,7 @@ class CategoryControllerImpl extends CategoryController {
     final picker = ImagePicker();
     XFile? pickedImage = await picker.pickImage(source: ImageSource.gallery);
     if (pickedImage != null) {
-      print(pickedImage.path);
       image = File(pickedImage.path);
-    } else {
-      print("Image picking canceled");
     }
     update();
   }

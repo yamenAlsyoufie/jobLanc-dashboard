@@ -12,7 +12,7 @@ abstract class ReportsPagecontroller extends GetxController {
 }
 
 class ReportsPagecontrollerImpl extends ReportsPagecontroller {
-  Myservices myServices = Get.find();
+  SharedPrefrencesServices myServices = Get.find();
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   ReportsBack reportBack = new ReportsBack(Get.put(Crud()));
   late String token;

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/controller/SettingsPageViewController.dart';
+import 'package:projectoneuniversity/controller/change_language.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/core/functions/dimenesions.dart';
 import 'package:projectoneuniversity/view/screens/CategoriesPage.dart';
@@ -70,10 +71,15 @@ class SettingsPageView extends StatelessWidget {
                         }),
                   ),
                   MyDivider(),
-                  ListTiles(
-                      leadingIcon: null,
-                      trailingIcon: Icons.arrow_forward_ios,
-                      listText: "28".tr),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(LanguageController());
+                    },
+                    child: ListTiles(
+                        leadingIcon: null,
+                        trailingIcon: Icons.arrow_forward_ios,
+                        listText: "28".tr),
+                  ),
                   MyDivider(),
                   ListTiles(
                       leadingIcon: null,

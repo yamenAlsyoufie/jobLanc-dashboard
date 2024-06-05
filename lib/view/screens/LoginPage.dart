@@ -41,7 +41,7 @@ class LoginPage extends StatelessWidget {
                         hintText: "16".tr,
                         labelText: "",
                         iconData: Icons.person,
-                        controller: controller.emailController,
+                        controller: controller.email,
                         min: 10,
                         max: 30,
                         isNumber: false,
@@ -53,7 +53,7 @@ class LoginPage extends StatelessWidget {
                         hintText: "17".tr,
                         labelText: "",
                         iconData: Icons.remove_red_eye,
-                        controller: controller.passwordController,
+                        controller: controller.password,
                         min: 8,
                         max: 30,
                         isNumber: false,
@@ -61,13 +61,13 @@ class LoginPage extends StatelessWidget {
                         isBorder: true,
                         isLabel: false,
                         ontapicon: controller.showPassword,
-                        isPassword: controller.isshown),
+                        isPassword: controller.isShown),
                     SizedBox(height: 50.h),
                     SizedBox(
                       width: double.infinity,
                       child: GestureDetector(
                         onTap: () {
-                          controller.logIn();
+                          controller.login();
                         },
                         child: Container(
                           width: Dimensions.screenWidth(context),

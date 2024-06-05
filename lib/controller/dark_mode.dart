@@ -7,7 +7,7 @@ abstract class DarkMode extends GetxController {
 }
 
 class DarkModeImpl extends DarkMode {
-  Myservices myServices = Get.find();
+  SharedPrefrencesServices myServices = Get.find();
   late ThemeMode themeMode;
   @override
   changeMode(String theme) {

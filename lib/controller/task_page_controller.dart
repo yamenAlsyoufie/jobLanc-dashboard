@@ -11,7 +11,6 @@ import 'package:projectoneuniversity/data/remote/task_back.dart';
 
 import '../core/constants/animations.dart';
 
-
 abstract class TaskPageController extends GetxController {
   getData();
   deleteData();
@@ -27,7 +26,7 @@ class TaskPageControllerImpl extends TaskPageController {
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   late int userId;
   bool isEditing = false, isOwner = false;
-  Myservices myServices = Get.find();
+  SharedPrefrencesServices myServices = Get.find();
   TaskPageControllerImpl(this.context,
       {required this.taskId, required this.id});
   @override
@@ -76,6 +75,4 @@ class TaskPageControllerImpl extends TaskPageController {
       animationedAlert(AppAnimations.wrong, "couldn'tdelete".tr);
     }
   }
-
-
 }

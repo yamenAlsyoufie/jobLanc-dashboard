@@ -18,12 +18,12 @@ class AdminHomePageControllerImpl extends AdminHomePageController {
   AdminHomePageBack freeLnacerHomePageBack =
       new AdminHomePageBack(Get.put(Crud()));
   String? token, id;
-  Myservices myservices = Get.find();
+  SharedPrefrencesServices myServices = Get.find();
   List<TaskModel> tasks = [];
-  TaskBack taskBack = new TaskBack(Get.put(Crud()));
+  TaskBack taskBack = TaskBack(Get.put(Crud()));
   @override
   void onInit() async {
-    token = myservices.sharedPreferences.getString("token")!;
+    token = myServices.sharedPreferences.getString("token")!;
     super.onInit();
     await getTasks();
   }
@@ -31,7 +31,7 @@ class AdminHomePageControllerImpl extends AdminHomePageController {
   getTasks() async {
     statusRequest = StatusRequest.loading;
     var response =
-        await taskBack.getData({}, AppLinks.task + "?user_id=2", token);
+        await taskBack.getData({}, "${AppLinks.task}?user_id=2", token);
     statusRequest = handelingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {

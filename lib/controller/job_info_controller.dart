@@ -6,7 +6,6 @@ import 'package:projectoneuniversity/data/remote/job_info_back.dart';
 
 import '../core/class/crud.dart';
 
-
 abstract class JobInfoController extends GetxController {
   getUserInfo();
   buttonFunction();
@@ -14,7 +13,7 @@ abstract class JobInfoController extends GetxController {
 }
 
 class JobInfoControllerImpl extends JobInfoController {
-  Myservices myServices = Get.find();
+  SharedPrefrencesServices myServices = Get.find();
   StatusRequest? statusRequest;
   final int jobId;
   late int userId;
@@ -62,7 +61,5 @@ class JobInfoControllerImpl extends JobInfoController {
     update();
   }
 
-  buttonFunction() {
-   
-  }
+  buttonFunction() {}
 }

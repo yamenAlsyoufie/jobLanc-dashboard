@@ -6,12 +6,11 @@ import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/core/functions/dimenesions.dart';
 import 'package:projectoneuniversity/data/Statics/static.dart';
 import 'package:projectoneuniversity/view/widgets/chart.dart';
-import 'package:projectoneuniversity/view/widgets/divider.dart';
 import 'package:projectoneuniversity/view/widgets/freelancer_design.dart';
 import 'package:projectoneuniversity/view/widgets/statistics_container.dart';
-import 'package:projectoneuniversity/view/widgets/top_bar.dart';
 
-class statisticsPageView extends StatelessWidget {
+// ignore: must_be_immutable
+class StatisticsPageView extends StatelessWidget {
   List<Map<String, String>> statistics = [
     {
       "Total companies": "200",
@@ -26,6 +25,8 @@ class statisticsPageView extends StatelessWidget {
       "Tasks last 7 days": "200",
     }
   ];
+
+  StatisticsPageView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,7 +98,7 @@ class statisticsPageView extends StatelessWidget {
               content: Container(
                 width: Dimensions.screenWidth(context) - 30,
                 height: 300.h,
-                child: Chart(
+                child: const Chart(
                   ordersFirstWeek: 2,
                   ordersFourthWeek: 4,
                   ordersSecondWeek: 1,
@@ -112,7 +113,7 @@ class statisticsPageView extends StatelessWidget {
               content: Container(
                 width: Dimensions.screenWidth(context) - 30,
                 height: 300.h,
-                child: Chart(
+                child: const Chart(
                   ordersFirstWeek: 2,
                   ordersFourthWeek: 4,
                   ordersSecondWeek: 3,
