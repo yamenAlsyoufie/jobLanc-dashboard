@@ -3,12 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/controller/job_info_controller.dart';
 import 'package:projectoneuniversity/data/Statics/static.dart';
-import 'package:projectoneuniversity/view/screens/job_info/about_company.dart';
-import 'package:projectoneuniversity/view/screens/job_info/about_job.dart';
-import 'package:projectoneuniversity/view/screens/job_info/additiona_info.dart';
-import 'package:projectoneuniversity/view/screens/job_info/company_info.dart';
-import 'package:projectoneuniversity/view/screens/job_info/requirments.dart';
-import 'package:projectoneuniversity/view/screens/job_info/task_and_tob_bar.dart';
+import 'package:projectoneuniversity/view/screens/JobView/about_company.dart';
+import 'package:projectoneuniversity/view/screens/JobView/about_job.dart';
+import 'package:projectoneuniversity/view/screens/JobView/additiona_info.dart';
+import 'package:projectoneuniversity/view/screens/JobView/company_info.dart';
+import 'package:projectoneuniversity/view/screens/JobView/requirments.dart';
+import 'package:projectoneuniversity/view/screens/JobView/task_and_tob_bar.dart';
 
 
 class JobInfo extends StatelessWidget {

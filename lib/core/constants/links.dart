@@ -13,5 +13,6 @@ class AppLinks {
   static String get company => "$IP/api/company";
   static String get category => "$IP/api/major";
   static String get reports => "$IP/api/reports";
-  
+  static String get userSkill => "$IP/api/user_skill";
+  static String get reviews => "$IP/api/review";
 }

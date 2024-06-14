@@ -7,7 +7,7 @@ import 'package:projectoneuniversity/core/functions/dimenesions.dart';
 import 'package:projectoneuniversity/view/screens/CategoriesPage.dart';
 import 'package:projectoneuniversity/view/screens/ChangeLanguage.dart';
 import 'package:projectoneuniversity/view/screens/ReportsPage.dart';
-import 'package:projectoneuniversity/view/screens/skills/skills.dart';
+import 'package:projectoneuniversity/view/screens/Skills/skills.dart';
 import 'package:projectoneuniversity/view/widgets/divider.dart';
 import 'package:projectoneuniversity/view/widgets/list_tile.dart';
 

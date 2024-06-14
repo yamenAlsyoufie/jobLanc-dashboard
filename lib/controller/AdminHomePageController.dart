@@ -5,7 +5,7 @@ import 'package:projectoneuniversity/core/constants/links.dart';
 import 'package:projectoneuniversity/core/functions/handeling_data.dart';
 import 'package:projectoneuniversity/core/services/services.dart';
 import 'package:projectoneuniversity/data/model/task_model.dart';
-import 'package:projectoneuniversity/data/remote/freelancer_home_page_back.dart';
+import 'package:projectoneuniversity/data/remote/AdminHomePageBack.dart';
 import 'package:projectoneuniversity/data/remote/task_back.dart';
 
 abstract class AdminHomePageController extends GetxController {

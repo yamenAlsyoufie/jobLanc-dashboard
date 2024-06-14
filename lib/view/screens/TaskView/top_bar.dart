@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:projectoneuniversity/core/constants/colors.dart';
 import 'package:projectoneuniversity/core/constants/links.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
-import 'package:projectoneuniversity/view/screens/job_info/task_and_tob_bar.dart';
+import 'package:projectoneuniversity/view/screens/JobView/task_and_tob_bar.dart';
 
 
 class TaskTobBar extends StatelessWidget {

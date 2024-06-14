@@ -5,7 +5,7 @@ import 'package:jiffy/jiffy.dart';
 import 'package:projectoneuniversity/controller/ReportsPageController.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/core/functions/dimenesions.dart';
-import 'package:projectoneuniversity/view/ReplyReport.dart';
+import 'package:projectoneuniversity/view/screens/ReplyReport.dart';
 
 class ReportsPage extends StatelessWidget {
   const ReportsPage({super.key});

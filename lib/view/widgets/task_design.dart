@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/core/constants/colors.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
-import 'package:projectoneuniversity/view/screens/task_info/task_page.dart';
+import 'package:projectoneuniversity/view/screens/TaskView/task_page.dart';
 
 
 class TaskDesign extends StatelessWidget {

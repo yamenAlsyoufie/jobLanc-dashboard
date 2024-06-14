@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/core/class/statusrequest.dart';
-import 'package:projectoneuniversity/view/screens/job_info/additiona_info.dart';
-import 'package:projectoneuniversity/view/screens/job_info/requirments.dart';
-import 'package:projectoneuniversity/view/screens/task_info/about_task.dart';
-import 'package:projectoneuniversity/view/screens/task_info/top_bar.dart';
+import 'package:projectoneuniversity/view/screens/JobView/additiona_info.dart';
+import 'package:projectoneuniversity/view/screens/JobView/requirments.dart';
+import 'package:projectoneuniversity/view/screens/TaskView/about_task.dart';
+import 'package:projectoneuniversity/view/screens/TaskView/top_bar.dart';
 
 import '../../../controller/task_page_controller.dart';
 

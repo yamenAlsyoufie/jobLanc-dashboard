@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/controller/skill_controller.dart';
-import 'package:projectoneuniversity/core/constants/buttons.dart';
-import 'package:projectoneuniversity/core/constants/custom_text_form_filed.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/core/functions/dimenesions.dart';
-import 'package:projectoneuniversity/view/screens/skills/add_skill.dart';
+import 'package:projectoneuniversity/view/screens/Skills/add_skill.dart';
 import 'package:projectoneuniversity/view/widgets/divider.dart';
 
 class Skills extends StatelessWidget {
