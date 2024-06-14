@@ -21,7 +21,9 @@ class CategoryControllerImpl extends CategoryController {
   SharedPrefrencesServices myServices = Get.find();
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   Categoryback categoryback = new Categoryback(Get.put(Crud()));
-  TextEditingController name = new TextEditingController();
+  TextEditingController englishName = new TextEditingController();
+  TextEditingController arabicName = new TextEditingController();
+
   late String token, language;
   StatusRequest? statusRequest, addCategoryStatus;
   List<CategoryModel> categories = [];
@@ -59,13 +61,12 @@ class CategoryControllerImpl extends CategoryController {
         return;
       }
       addCategoryStatus = StatusRequest.loading;
-      var response = categoryback.postCategory(token, image);
+      var response = await categoryback.postCategory(
+          token, image, {"name_EN": englishName, "name_AR": arabicName});
       addCategoryStatus = handelingData(response);
       if (StatusRequest.success == addCategoryStatus) {
         if (response['status'] == "success") {
-          for (var reviewData in response['data']) {
-            categories.add(CategoryModel.fromJson(reviewData));
-          }
+          Get.back();
         }
       }
     }

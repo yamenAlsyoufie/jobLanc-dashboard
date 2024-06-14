@@ -17,10 +17,10 @@ class Categoryback {
         null);
     return response.fold((l) => l, (r) => r);
   }
-  postCategory(var token, File image) async {
+  postCategory(var token, File image,Map data) async {
     var response = await crud.postAndGetData(
         AppLinks.category,
-        {},
+        data,
         {'Authorization': 'Bearer $token', 'accept': 'application/json'},
         "image",
         true,

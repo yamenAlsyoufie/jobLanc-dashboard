@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/controller/SettingsPageViewController.dart';
-import 'package:projectoneuniversity/controller/change_language.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/core/functions/dimenesions.dart';
 import 'package:projectoneuniversity/view/screens/CategoriesPage.dart';
+import 'package:projectoneuniversity/view/screens/ChangeLanguage.dart';
 import 'package:projectoneuniversity/view/screens/ReportsPage.dart';
+import 'package:projectoneuniversity/view/screens/skills/skills.dart';
 import 'package:projectoneuniversity/view/widgets/divider.dart';
 import 'package:projectoneuniversity/view/widgets/list_tile.dart';
 
@@ -73,7 +74,7 @@ class SettingsPageView extends StatelessWidget {
                   MyDivider(),
                   GestureDetector(
                     onTap: () {
-                      Get.to(LanguageController());
+                      Get.to(ChangeTheLanguage());
                     },
                     child: ListTiles(
                         leadingIcon: null,
@@ -119,10 +120,15 @@ class SettingsPageView extends StatelessWidget {
                       trailingIcon: Icons.arrow_forward_ios,
                       listText: "31".tr),
                   MyDivider(),
-                  ListTiles(
-                      leadingIcon: null,
-                      trailingIcon: Icons.arrow_forward_ios,
-                      listText: "32".tr),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(Skills());
+                    },
+                    child: ListTiles(
+                        leadingIcon: null,
+                        trailingIcon: Icons.arrow_forward_ios,
+                        listText: "32".tr),
+                  ),
                 ],
               ),
             ),

@@ -103,89 +103,106 @@ class CategoriesPage extends StatelessWidget {
                     visible: controller.isAdding,
                     child: Container(
                       width: Dimensions.screenWidth(context),
-                      margin: EdgeInsets.symmetric(horizontal: 5.w),
+                      //  margin: EdgeInsets.symmetric(horizontal: 5.w),
                       padding: EdgeInsets.all(5.sp),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
                           color:
                               Theme.of(context).colorScheme.primaryContainer),
-                      child: Column(
-                        children: [
-                          Customtextformfiled(
-                            hintText: "35".tr,
-                            labelText: "",
-                            iconData: null,
-                            controller: controller.name,
-                            min: 3,
-                            max: 20,
-                            isNumber: false,
-                            isPassword: false,
-                            isFilled: true,
-                            isLabel: false,
-                            isBorder: true,
-                          ),
-                          SizedBox(height: 20.h),
-                          GestureDetector(
-                            onTap: () {
-                              controller.pickImage();
-                            },
-                            child: Container(
-                                width: Dimensions.screenWidth(context) - 10,
-                                height: 60.h,
-                                alignment: AlignmentDirectional.centerStart,
-                                margin: EdgeInsets.symmetric(horizontal: 5.w),
-                                padding: EdgeInsets.all(10.sp),
-                                decoration: BoxDecoration(
-                                  color:
-                                      Theme.of(context).colorScheme.background,
-                                  borderRadius: BorderRadius.circular(16),
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "36".tr,
-                                      style: TextStyles.w50014(context),
-                                    ),
-                                    Icon(
-                                      Icons.add,
-                                      size: 18.sp,
-                                    )
-                                  ],
-                                )),
-                          ),
-                          Visibility(
-                              visible: controller.image != null,
+                      child: Form(
+                        key: controller.formState,
+                        child: Column(
+                          children: [
+                            Customtextformfiled(
+                              hintText: "35".tr,
+                              labelText: "",
+                              iconData: null,
+                              controller: controller.englishName,
+                              min: 3,
+                              max: 20,
+                              isNumber: false,
+                              isPassword: false,
+                              isFilled: true,
+                              isLabel: false,
+                              isBorder: true,
+                            ),
+                            Customtextformfiled(
+                              hintText: "53".tr,
+                              labelText: "",
+                              iconData: null,
+                              controller: controller.arabicName,
+                              min: 3,
+                              max: 20,
+                              isNumber: false,
+                              isPassword: false,
+                              isFilled: true,
+                              isLabel: false,
+                              isBorder: true,
+                            ),
+                            SizedBox(height: 20.h),
+                            GestureDetector(
+                              onTap: () {
+                                controller.pickImage();
+                              },
                               child: Container(
-                                width: 120.w,
-                                margin: EdgeInsets.symmetric(vertical: 20.h),
-                                height: 120.h,
-                                child: controller.image == null
-                                    ? null
-                                    : Image.file(
-                                        File(controller.image.path),
-                                        fit: BoxFit.cover,
+                                  width: Dimensions.screenWidth(context) - 10,
+                                  height: 60.h,
+                                  alignment: AlignmentDirectional.centerStart,
+                                  margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                  padding: EdgeInsets.all(10.sp),
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .background,
+                                    borderRadius: BorderRadius.circular(16),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "36".tr,
+                                        style: TextStyles.w50014(context),
                                       ),
-                              )),
-                          GestureDetector(
-                            onTap: () {
-                              controller.addCategory();
-                            },
-                            child: Container(
-                              width: Dimensions.screenWidth(context),
-                              height: 40.h,
-                              alignment: Alignment.center,
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: 40.w, vertical: 20.h),
-                              decoration: AppButtons.buttonDecoration,
-                              child: Text(
-                                "37".tr,
-                                style: TextStyles.w50016White(context),
+                                      Icon(
+                                        Icons.add,
+                                        size: 18.sp,
+                                      )
+                                    ],
+                                  )),
+                            ),
+                            Visibility(
+                                visible: controller.image != null,
+                                child: Container(
+                                  width: 120.w,
+                                  margin: EdgeInsets.symmetric(vertical: 20.h),
+                                  height: 120.h,
+                                  child: controller.image == null
+                                      ? null
+                                      : Image.file(
+                                          File(controller.image.path),
+                                          fit: BoxFit.cover,
+                                        ),
+                                )),
+                            GestureDetector(
+                              onTap: () {
+                                controller.addCategory();
+                              },
+                              child: Container(
+                                width: Dimensions.screenWidth(context),
+                                height: 40.h,
+                                alignment: Alignment.center,
+                                margin: EdgeInsets.symmetric(
+                                    horizontal: 40.w, vertical: 20.h),
+                                decoration: AppButtons.buttonDecoration,
+                                child: Text(
+                                  "37".tr,
+                                  style: TextStyles.w50016White(context),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ))
               ],

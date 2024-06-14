@@ -67,7 +67,7 @@ class StatisticsPageView extends StatelessWidget {
             padding: EdgeInsetsDirectional.only(
                 start: 10.w, bottom: 10.h, top: 10.h),
             child: Text(
-              "Statistics",
+              "7".tr,
               style: TextStyles.w50017(context),
             ),
           ),
@@ -94,7 +94,7 @@ class StatisticsPageView extends StatelessWidget {
             height: 20.h,
           ),
           ChartContainer(
-              title: "Tasks",
+              title: "50".tr,
               content: Container(
                 width: Dimensions.screenWidth(context) - 30,
                 height: 300.h,
@@ -109,7 +109,7 @@ class StatisticsPageView extends StatelessWidget {
             height: 20.h,
           ),
           ChartContainer(
-              title: "Jobs",
+              title: "49".tr,
               content: Container(
                 width: Dimensions.screenWidth(context) - 30,
                 height: 300.h,
@@ -124,7 +124,7 @@ class StatisticsPageView extends StatelessWidget {
             padding: EdgeInsetsDirectional.only(
                 start: 10.w, top: 20.h, bottom: 10.h),
             child: Text(
-              "Freelancer of the month",
+              "51".tr,
               style: TextStyles.w50017(context),
             ),
           ),
@@ -142,7 +142,7 @@ class StatisticsPageView extends StatelessWidget {
             padding: EdgeInsetsDirectional.only(
                 start: 10.w, top: 10.h, bottom: 10.h),
             child: Text(
-              "Company of the month",
+              "52".tr,
               style: TextStyles.w50017(context),
             ),
           ),

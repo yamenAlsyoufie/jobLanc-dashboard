@@ -25,6 +25,7 @@ class Customtextformfiled extends StatelessWidget {
   final double? padding;
   final TextInputAction? textInputAction;
   final TextStyle? styleText;
+  final Color? filledColor;
 
   final bool isValidation;
   final FocusNode? focusNode;
@@ -52,7 +53,7 @@ class Customtextformfiled extends StatelessWidget {
     this.textInputAction,
     this.textInputType,
     this.isEnabled = true,
-    this.styleText,
+    this.styleText, this.filledColor,
   });
 
   @override
@@ -63,7 +64,7 @@ class Customtextformfiled extends StatelessWidget {
       decoration: isFilled
           ? BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: Theme.of(context).colorScheme.primaryContainer,
+              color:filledColor ?? Theme.of(context).colorScheme.primaryContainer,
             )
           : null,
       child: TextFormField(

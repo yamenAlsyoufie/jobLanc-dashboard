@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:projectoneuniversity/core/constants/custom_text_form_filed.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
 
@@ -15,7 +16,7 @@ class WalletPageView extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
             child: SafeArea(
                 child: Text(
-              "Charge wallet",
+              "47".tr,
               style: TextStyles.w50018(context),
             )),
           ),
@@ -24,7 +25,7 @@ class WalletPageView extends StatelessWidget {
               horizontal: 10.w,
             ),
             child: Text(
-              "please enter the name of the user you want to charge its wallet",
+              "46".tr,
               style: TextStyles.w40013grey(context),
             ),
           ),
@@ -32,7 +33,7 @@ class WalletPageView extends StatelessWidget {
             height: 10.h,
           ),
           Customtextformfiled(
-            hintText: "username",
+            hintText: "48".tr,
             labelText: "",
             iconData: Icons.person_outline,
             controller: null,

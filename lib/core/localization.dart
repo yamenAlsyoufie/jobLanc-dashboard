@@ -16,7 +16,7 @@ class localization extends Translations {
           '6':
               'Display an overview of the application and view the job offers available on the app with the possibility of deleting any job offer',
           //B.statistics page
-          '7': 'Statistics page',
+          '7': 'Statistics',
           '8':
               'display flow chart diagram about best companies in the app and the most people add tasks in the app and display number of user in the app in every month',
           //C.Wallet page
@@ -50,11 +50,11 @@ class localization extends Translations {
           "29":"Change password",
           "30":"Categories",
           "31":"Job Types",
-          "32":"Add Skill",
+          "32":"Skills",
           "33":"Logout",
           "34":"Reports",
           //Categories page
-          "35":"Category name",
+          "35":"English name",
           "36":"Add image",
           "37":"Confirm",
           //Reports
@@ -66,7 +66,28 @@ class localization extends Translations {
           "43":"Send",
           //login
           "44":"Wrong email or password",
-          "45":"Error while logging in"
+          "45":"Error while logging in",
+          //Wallet
+          "46":"Please enter the name of the user you want to charge its wallet",
+          "47":"Charge wallet",
+          "48":"Username",
+          //Statistics Page
+          "49":"Jobs",
+          "50":"Tasks",
+          "51":"Freelancer of the month",
+          "52":"Conpmany of the month",
+          "53":"Arabic name",
+          "54":"Confirm",
+          "55":"Enter name of skill",
+          "56":"Skills",
+          "57":"Your skill has been added",
+          "58":"Couldn't add skill",
+          "59":"Add skill",
+          "60":"Search skill",
+          "61":"Please wait",
+          "62":"Skill has been deleted",
+          "63":"Couldn't delete skill"
+
         },
         'ar': {
           //choose language page in arabic

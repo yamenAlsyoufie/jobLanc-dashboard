@@ -7,7 +7,7 @@ class AppLinks {
   static String get jobs => "$IP/api/jobs";
   static String get sendReport => "$IP/api/report/send";
   static String get user => "$IP/api/user";
-  static String get skills => "$IP/api/user_skills";
+  static String get skills => "$IP/api/skill";
   static String get project => "$IP/api/userProject";
   static String get task => "$IP/api/task";
   static String get company => "$IP/api/company";
