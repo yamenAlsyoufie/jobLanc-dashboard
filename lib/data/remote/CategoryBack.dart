@@ -17,7 +17,8 @@ class Categoryback {
         null);
     return response.fold((l) => l, (r) => r);
   }
-  postCategory(var token, File image,Map data) async {
+
+  postCategory(var token, File image, Map data) async {
     var response = await crud.postAndGetData(
         AppLinks.category,
         data,
@@ -27,5 +28,13 @@ class Categoryback {
         true,
         image);
     return response.fold((l) => l, (r) => r);
+  }
+
+  deleteCategory(String id,String token) async {
+    var response = await crud.deleteData(
+      "${AppLinks.category}/$id",
+      {},{'Authorization': 'Bearer $token', 'accept': 'application/json'},
+    );
+     return response.fold((l) => l, (r) => r);
   }
 }

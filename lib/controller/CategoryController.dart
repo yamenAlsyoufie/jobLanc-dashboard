@@ -11,13 +11,7 @@ import 'package:projectoneuniversity/core/services/services.dart';
 import 'package:projectoneuniversity/data/model/categorie_model.dart';
 import 'package:projectoneuniversity/data/remote/CategoryBack.dart';
 
-abstract class CategoryController extends GetxController {
-  getCategories();
-  addCategory();
-  pickImage();
-}
-
-class CategoryControllerImpl extends CategoryController {
+class CategoryController extends GetxController {
   SharedPrefrencesServices myServices = Get.find();
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   Categoryback categoryback = new Categoryback(Get.put(Crud()));
@@ -37,7 +31,6 @@ class CategoryControllerImpl extends CategoryController {
     super.onInit();
   }
 
-  @override
   getCategories() async {
     statusRequest = StatusRequest.loading;
     var response = await categoryback.getCategories(token, language);
@@ -52,7 +45,6 @@ class CategoryControllerImpl extends CategoryController {
     update();
   }
 
-  @override
   addCategory() async {
     var formdata = formState.currentState;
     if (formdata!.validate()) {
@@ -73,7 +65,18 @@ class CategoryControllerImpl extends CategoryController {
     update();
   }
 
-  @override
+  deleteCategory(int id) async {
+    statusRequest = StatusRequest.loading;
+    var response = await categoryback.deleteCategory(id.toString(), token);
+    statusRequest = handelingData(response);
+    if (StatusRequest.success == statusRequest) {
+      if (response['status'] == "success") {
+        Get.back();
+      }
+    }
+    update();
+  }
+
   Future<void> pickImage() async {
     final picker = ImagePicker();
     XFile? pickedImage = await picker.pickImage(source: ImageSource.gallery);

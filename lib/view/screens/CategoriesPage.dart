@@ -15,9 +15,9 @@ class CategoriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(CategoryControllerImpl());
+    Get.put(CategoryController());
     return Scaffold(
-      body: GetBuilder<CategoryControllerImpl>(
+      body: GetBuilder<CategoryController>(
         builder: (controller) => SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
@@ -72,7 +72,7 @@ class CategoriesPage extends StatelessWidget {
                               ),
                             )
                           : Container(
-                              alignment: Alignment.center,
+                              alignment: Alignment.topCenter,
                               // padding: EdgeInsets.all(8.sp),
                               margin: EdgeInsets.all(10.sp),
                               decoration: BoxDecoration(
@@ -81,8 +81,22 @@ class CategoriesPage extends StatelessWidget {
                                       .colorScheme
                                       .primaryContainer),
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.only(
+                                        start: 90.w, top: 10.h),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        controller.deleteCategory(controller.categories[index].id!);
+                                      },
+                                      child: Icon(
+                                        Icons.delete_outline,
+                                        size: 18.sp,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                  ),
                                   Image.network(
                                     AppLinks.IP +
                                         "/" +
@@ -121,6 +135,8 @@ class CategoriesPage extends StatelessWidget {
                               min: 3,
                               max: 20,
                               isNumber: false,
+                              filledColor:
+                                  Theme.of(context).colorScheme.background,
                               isPassword: false,
                               isFilled: true,
                               isLabel: false,
@@ -134,6 +150,8 @@ class CategoriesPage extends StatelessWidget {
                               min: 3,
                               max: 20,
                               isNumber: false,
+                              filledColor:
+                                  Theme.of(context).colorScheme.background,
                               isPassword: false,
                               isFilled: true,
                               isLabel: false,
