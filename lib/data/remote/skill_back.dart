@@ -4,7 +4,7 @@ import 'package:projectoneuniversity/core/constants/links.dart';
 class SkillBack {
   Crud crud;
   SkillBack(this.crud);
-  getSkills(var token, String link, Map data) async {
+  getSkills(String token, String link, Map data) async {
     var response = await crud.postAndGetData(
         link,
         data,
@@ -16,7 +16,7 @@ class SkillBack {
     return response.fold((l) => l, (r) => r);
   }
 
-  addSkill(var token, Map data) async {
+  addSkill(String token, Map data) async {
     var response = await crud.postAndGetData(
         AppLinks.skills,
         data,
@@ -28,7 +28,7 @@ class SkillBack {
     return response.fold((l) => l, (r) => r);
   }
 
-  deleteSkill(var token, String id) async {
+  deleteSkill(String token, String id) async {
     var response = await crud.deleteData(
       "${AppLinks.skills}/$id",
       {},

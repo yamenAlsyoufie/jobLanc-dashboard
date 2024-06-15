@@ -86,7 +86,13 @@ class localization extends Translations {
           "60":"Search skill",
           "61":"Please wait",
           "62":"Skill has been deleted",
-          "63":"Couldn't delete skill"
+          "63":"Couldn't delete skill",
+          "64":"Do you really want to delete this task?",
+          "65":"Add job type",
+          "66":"English name",
+          "67":"Job types",
+          "68":"Job type has been added",
+          "69":"Couldn't add Job type"
 
         },
         'ar': {
