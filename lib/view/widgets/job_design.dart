@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:projectoneuniversity/core/constants/colors.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/core/functions/dimenesions.dart';
+import 'package:projectoneuniversity/view/screens/JobView/job_info.dart';
 
 class JobDesign extends StatelessWidget {
   final String jobTitle;
@@ -30,7 +31,7 @@ class JobDesign extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        //Get.to(JobInfo(id: jobId));
+        Get.to(JobInfo(id: jobId));
       },
       child: Container(
         width: Dimensions.screenWidth(context),
@@ -44,7 +45,7 @@ class JobDesign extends StatelessWidget {
           children: [
             Row(
               children: [
-                Container(
+                SizedBox(
                   width: 40.sp,
                   height: 40.sp,
                   child: ClipRRect(
@@ -71,15 +72,14 @@ class JobDesign extends StatelessWidget {
                       style: TextStyles.w50012(context),
                     ),
                     SizedBox(height: 3.h),
-                    Container(
+                    SizedBox(
                       width: 160.w,
                       child: Text(
-                        remote + " - " + location,
+                        "$remote - $location",
                         style: TextStyles.w40011grey(context),
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    //SizedBox(height: 3.h),
                     Text(
                       date,
                       style: TextStyles.w4009grey(context),
@@ -117,7 +117,7 @@ class JobDesign extends StatelessWidget {
                                   : Colors.red[800]),
                         ),
                         Text(
-                          isActive ? "active".tr : "inactive".tr,
+                          isActive ? "70".tr : "71".tr,
                           style: TextStyles.w40010(context),
                         ),
                       ],

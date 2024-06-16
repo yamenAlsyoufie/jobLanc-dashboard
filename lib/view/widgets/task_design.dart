@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/core/constants/colors.dart';
+import 'package:projectoneuniversity/core/constants/links.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/view/screens/TaskView/task_page.dart';
 
@@ -66,8 +67,8 @@ class TaskDesign extends StatelessWidget {
                           height: 35,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              image,
+                            child: Image.network(
+                             AppLinks.IP+ image,
                               fit: BoxFit.fill,
                             ),
                           ),

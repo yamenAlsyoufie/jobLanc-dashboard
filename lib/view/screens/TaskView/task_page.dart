@@ -32,7 +32,7 @@ class TaskPage extends StatelessWidget {
                           userImage: controller.task.image!,
                           userName: controller.task.name!,
                           taskTitle: controller.task.taskTitle!,
-                          major: "wwww",
+                          major: controller.task.majorName!,
                           isActive: true,
                           onDelete: controller.deleteData,
                           isOwner: controller.isOwner,
@@ -40,7 +40,7 @@ class TaskPage extends StatelessWidget {
                               "-" +
                               controller.task.budgetMax.toString(),
                           id: controller.task.id!,
-                          duration: controller.task.taskDuration.toString()),
+                          duration: controller.task.taskDuration.toString(), date: controller.task.createdAt!,active: controller.task.active==1?true:false,),
                       SizedBox(
                         height: 5.h,
                       ),

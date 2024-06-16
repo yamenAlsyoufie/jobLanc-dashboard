@@ -92,7 +92,9 @@ class localization extends Translations {
           "66":"English name",
           "67":"Job types",
           "68":"Job type has been added",
-          "69":"Couldn't add Job type"
+          "69":"Couldn't add Job type",
+          "70":"Active",
+          "71":"In-active"
 
         },
         'ar': {

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/controller/profiles_controller/freelancer_profile_controller.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
-import 'package:projectoneuniversity/data/Statics/static.dart';
 import 'package:projectoneuniversity/view/widgets/divider.dart';
 import 'package:projectoneuniversity/view/widgets/project_design.dart';
 
@@ -51,11 +50,11 @@ Widget tasks(BuildContext context, var controller) {
                 return TaskDesign(
                     taskTitle: controller.tasks[index].taskTitle,
                     userName: controller.tasks[index].name,
-                    major: "software developer",
+                    major: controller.tasks[index].majorName,
                     date: controller.tasks[index].createdAt,
                     duration: controller.tasks[index].taskDuration.toString(),
-                    image: ArabicIconChooseLanguage,
-                    isActive: true, aboutTask:controller.tasks[index].aboutTask, taskId: controller.tasks[index].id, id: controller.tasks[index].userId,);
+                    image: controller.tasks[index].image,
+                    isActive: controller.tasks[index].active==1?true:false, aboutTask:controller.tasks[index].aboutTask, taskId: controller.tasks[index].id, id: controller.tasks[index].userId,);
               }),
         ],
       ),

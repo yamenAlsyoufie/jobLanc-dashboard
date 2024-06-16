@@ -6,7 +6,6 @@ import 'package:projectoneuniversity/core/constants/links.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/view/screens/JobView/task_and_tob_bar.dart';
 
-
 class TaskTobBar extends StatelessWidget {
   final String userImage;
   final String userName;
@@ -14,9 +13,11 @@ class TaskTobBar extends StatelessWidget {
   final String major;
   final String budget;
   final int id;
+  final String date;
   final String duration;
   final bool isActive, isOwner;
   final void Function()? onDelete;
+  final bool active;
   const TaskTobBar(
       {super.key,
       required this.userImage,
@@ -28,7 +29,8 @@ class TaskTobBar extends StatelessWidget {
       required this.duration,
       required this.id,
       required this.isOwner,
-      this.onDelete});
+      this.onDelete,
+      required this.date, required this.active});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,7 @@ class TaskTobBar extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                //      Get.to(CompanyProfile(id: id));
+                      //      Get.to(CompanyProfile(id: id));
                     },
                     child: Container(
                       width: 45.w,
@@ -145,7 +147,7 @@ class TaskTobBar extends StatelessWidget {
                             Icon(Icons.calendar_month_outlined, size: 15.sp),
                             SizedBox(width: 8.w),
                             Text(
-                              "2 weeks ago".tr,
+                              date.tr,
                               style: TextStyles.w40011grey(context),
                             ),
                           ],
@@ -162,13 +164,12 @@ class TaskTobBar extends StatelessWidget {
                             ),
                             SizedBox(width: 10.w),
                             Text(
-                              "active".tr,
+                              active ? "active".tr : "inactive".tr,
                               style: TextStyles.w40011grey(context),
                             ),
                           ],
                         ),
                       ]),
-               
                 ],
               ),
             ],
