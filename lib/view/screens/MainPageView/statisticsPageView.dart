@@ -8,7 +8,6 @@ import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/core/functions/dimenesions.dart';
 import 'package:projectoneuniversity/data/Statics/static.dart';
 import 'package:projectoneuniversity/view/widgets/chart.dart';
-import 'package:projectoneuniversity/view/widgets/freelancer_design.dart';
 import 'package:projectoneuniversity/view/widgets/statistics_container.dart';
 
 // ignore: must_be_immutable

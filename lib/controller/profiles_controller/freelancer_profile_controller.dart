@@ -4,33 +4,26 @@ import 'package:projectoneuniversity/core/class/statusrequest.dart';
 import 'package:projectoneuniversity/core/constants/links.dart';
 import 'package:projectoneuniversity/core/functions/handeling_data.dart';
 import 'package:projectoneuniversity/core/services/services.dart';
-import 'package:projectoneuniversity/data/model/freelancer_info_model.dart';
+import 'package:projectoneuniversity/data/model/add_review_back.dart';
 import 'package:projectoneuniversity/data/model/project_or_product_model.dart';
 import 'package:projectoneuniversity/data/model/task_model.dart';
 import 'package:projectoneuniversity/data/remote/add_project_or_product_back.dart';
-import 'package:projectoneuniversity/data/remote/add_review_back.dart';
 import 'package:projectoneuniversity/data/remote/profile_back.dart';
 import 'package:projectoneuniversity/data/remote/task_back.dart';
 
 import '../../core/class/crud.dart';
 
-abstract class FreelancerProfileController extends GetxController {
-  getUserData();
-  getSkills();
-  getProjects();
-}
 
-class FreelancerProfileControllerImpl extends FreelancerProfileController {
-  StatusRequest? statusRequest, reviewStatus;
-  List<FreeLancerInfoModel> info = [];
+class FreelancerProfileControllerImpl extends GetxController {
+  StatusRequest? statusRequest, reviewStatus, followStatus;
   final int id;
   SharedPrefrencesServices myServices = Get.find();
   List<TaskModel> tasks = [];
+  List<ProjectOrProductModel> projects = [];
   TaskBack taskBack = new TaskBack(Get.put(Crud()));
   Map data = {};
-  late String language;
-  late String token;
-  List<ProjectOrProductModel> projects = [];
+  bool followed = false;
+  late String language, token;
   List<Widget> tabs = [
     Tab(
       text: "about".tr,
@@ -45,14 +38,13 @@ class FreelancerProfileControllerImpl extends FreelancerProfileController {
   ProfileBack profileBack = new ProfileBack(Get.put(Crud()));
   AddProjectOrProductBack addProjectOrProductBack =
       new AddProjectOrProductBack(Get.put(Crud()));
-  ReviewBack addReviewBack = new ReviewBack(Get.put(Crud()));
+  AddReviewBack addReviewBack = new AddReviewBack(Get.put(Crud()));
   FreelancerProfileControllerImpl({required this.id});
   List userSkills = [];
   @override
   void onInit() async {
     token = myServices.sharedPreferences.getString("token")!;
     language = myServices.sharedPreferences.getString("lang")!;
-    //displayData();
     await getUserData();
     await getSkills();
     await getProjects();
@@ -62,8 +54,9 @@ class FreelancerProfileControllerImpl extends FreelancerProfileController {
 
   getTasks() async {
     statusRequest = StatusRequest.loading;
-    var response = await taskBack
-        .getData({}, AppLinks.task + "?user_id" + id.toString(), token);
+    var response = await taskBack.getData({},
+        AppLinks.task + "?user_id=" + id.toString() + "&&lang=" + language,
+        token);
     statusRequest = handelingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
@@ -104,6 +97,7 @@ class FreelancerProfileControllerImpl extends FreelancerProfileController {
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
         data.addAll(response['data']);
+        followed = response['data']['followed'];
       }
     }
     update();

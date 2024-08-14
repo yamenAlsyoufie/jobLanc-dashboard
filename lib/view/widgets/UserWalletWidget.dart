@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:projectoneuniversity/controller/wallet_controller.dart';
 import 'package:projectoneuniversity/core/constants/buttons.dart';
 import 'package:projectoneuniversity/core/constants/custom_text_form_filed.dart';
-import 'package:projectoneuniversity/core/constants/links.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/core/functions/dimenesions.dart';
 

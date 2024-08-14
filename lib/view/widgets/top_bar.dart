@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:projectoneuniversity/core/constants/colors.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/core/functions/dimenesions.dart';
 
@@ -28,25 +27,7 @@ class TopBar extends StatelessWidget {
             children: [
               Expanded(
                 child: Row(children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    margin: EdgeInsetsDirectional.only(end: 10.w),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(30),
-                      child:Image.asset(image)
-                      //  image != ""
-                      //     ? Image.network(
-                      //         image[0] == "h"
-                      //             ? image
-                      //             : AppLinks.IP + image,
-                      //         fit: BoxFit.cover,
-                      //       )
-                      //     : Container(),
-                    ),
-                  ),
+               
                   Expanded(
                     child: Padding(
                       padding: EdgeInsetsDirectional.only(end: 10.w),
@@ -59,29 +40,29 @@ class TopBar extends StatelessWidget {
                   ),
                 ]),
               ),
-              GestureDetector(
-                onTap: () {
-                  //Get.to(Notifications());
-                },
-                child: Container(
-                  width: 40.w,
-                  height: 40.h,
-                  child: Icon(
-                    Icons.notifications_outlined,
-                    size: 20.sp,
-                    color: LightAppColors.primaryColor,
-                    shadows: [
-                      Shadow(
-                          color: LightAppColors.greyColor!,
-                          offset: Offset(0.2, 0.3),
-                          blurRadius: 0.5)
-                    ],
-                  ),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Theme.of(context).colorScheme.primaryContainer),
-                ),
-              ),
+              // GestureDetector(
+              //   onTap: () {
+              //     //Get.to(Notifications());
+              //   },
+              //   child: Container(
+              //     width: 40.w,
+              //     height: 40.h,
+              //     child: Icon(
+              //       Icons.notifications_outlined,
+              //       size: 20.sp,
+              //       color: LightAppColors.primaryColor,
+              //       shadows: [
+              //         Shadow(
+              //             color: LightAppColors.greyColor!,
+              //             offset: Offset(0.2, 0.3),
+              //             blurRadius: 0.5)
+              //       ],
+              //     ),
+              //     decoration: BoxDecoration(
+              //         borderRadius: BorderRadius.circular(10),
+              //         color: Theme.of(context).colorScheme.primaryContainer),
+              //   ),
+              // ),
             ],
           ),
         )),

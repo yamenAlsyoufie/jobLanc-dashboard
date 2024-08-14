@@ -2,20 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:projectoneuniversity/core/constants/colors.dart';
-import 'package:projectoneuniversity/core/constants/text_styles.dart';
-import 'package:projectoneuniversity/core/functions/dimenesions.dart';
-import 'package:projectoneuniversity/view/screens/JobView/job_info.dart';
+import 'package:jiffy/jiffy.dart';
+import 'package:joblance/core/constants/colors.dart';
+import 'package:joblance/core/constants/images.dart';
+import 'package:joblance/core/constants/links.dart';
+import 'package:joblance/core/constants/text_styles.dart';
+import 'package:joblance/core/functions/dimenesions.dart';
+import 'package:joblance/view/screens/job_info/job_info.dart';
 
 class JobDesign extends StatelessWidget {
   final String jobTitle;
   final String companyName;
-  final String location;
+  final String? location;
   final String date;
   final int jobId;
   final String remote;
   final String image;
+  final int companyId;
   final bool isActive;
+  final bool? isFavourite;
+  final void Function()? onFavouriteTap;
   const JobDesign(
       {super.key,
       required this.jobTitle,
@@ -25,7 +31,10 @@ class JobDesign extends StatelessWidget {
       required this.remote,
       required this.image,
       required this.isActive,
-      required this.jobId});
+      required this.jobId,
+      required this.companyId,
+      this.isFavourite,
+      this.onFavouriteTap});
 
   @override
   Widget build(BuildContext context) {
@@ -45,13 +54,13 @@ class JobDesign extends StatelessWidget {
           children: [
             Row(
               children: [
-                SizedBox(
+                Container(
                   width: 40.sp,
                   height: 40.sp,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      image,
+                    child: Image.network(
+                      AppLinks.IP + image,
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -72,16 +81,19 @@ class JobDesign extends StatelessWidget {
                       style: TextStyles.w50012(context),
                     ),
                     SizedBox(height: 3.h),
-                    SizedBox(
+                    Container(
                       width: 160.w,
-                      child: Text(
-                        "$remote - $location",
-                        style: TextStyles.w40011grey(context),
-                        overflow: TextOverflow.ellipsis,
+                      child: Visibility(
+                        visible: location != null,
+                        child: Text(
+                          remote + " - " + location!,
+                          style: TextStyles.w40011grey(context),
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ),
                     Text(
-                      date,
+                      Jiffy.parse(date).fromNow().toString(),
                       style: TextStyles.w4009grey(context),
                     )
                   ],
@@ -93,6 +105,27 @@ class JobDesign extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Align(
+                    alignment: AlignmentDirectional.centerEnd,
+                    child: isFavourite != null
+                        ? GestureDetector(
+                            onTap: onFavouriteTap,
+                            child: Container(
+                                width: 20.w,
+                                height: 20.h,
+                                margin: EdgeInsets.only(bottom: 10.h),
+                                child: Image.asset(
+                                  AppImages.save,
+                                  fit: BoxFit.fill,
+                                  color: isFavourite!
+                                      ? Colors.red[800]
+                                      : Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary,
+                                )),
+                          )
+                        : null,
+                  ),
                   SizedBox(
                     height: 20.h,
                   ),
@@ -117,7 +150,7 @@ class JobDesign extends StatelessWidget {
                                   : Colors.red[800]),
                         ),
                         Text(
-                          isActive ? "70".tr : "71".tr,
+                          isActive ? "active".tr : "inactive".tr,
                           style: TextStyles.w40010(context),
                         ),
                       ],

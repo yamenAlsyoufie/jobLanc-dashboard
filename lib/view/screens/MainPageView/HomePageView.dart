@@ -62,33 +62,29 @@ class HomePageView extends StatelessWidget {
                               style: TextStyles.bold17(context),
                             )),
                       ),
-                      JobDesign(
-                          jobTitle: "Ai developer",
-                          companyName: "Google",
-                          location: "Germany",
-                          date: "5 days ago",
-                          jobId: 2,
-                          remote: "onsite".tr,
-                          image: EnglishIconChooseLanguage,
-                          isActive: true),
-                      JobDesign(
-                          jobTitle: "Flutter developer",
-                          companyName: "Linkedin",
-                          location: "United states",
-                          date: "2 days ago",
-                          jobId: 2,
-                          remote: "remote".tr,
-                          image: EnglishIconChooseLanguage,
-                          isActive: true),
-                      JobDesign(
-                          jobTitle: "Java developer",
-                          companyName: "Meta",
-                          location: "United kingdomdawdw",
-                          date: "2 weeks ago",
-                          remote: "remote".tr,
-                          jobId: 2,
-                          image: EnglishIconChooseLanguage,
-                          isActive: true),
+                        ListView.builder(
+                              itemCount: controller.jobs.length,
+                              physics: NeverScrollableScrollPhysics(),
+                              padding: EdgeInsets.zero,
+                              shrinkWrap: true,
+                              itemBuilder: (BuildContext context, int index) {
+                                return JobDesign(
+                                  jobTitle: controller.jobs[index].jobTitle!,
+                                  companyName:
+                                      controller.jobs[index].companyName!,
+                                  location: controller.jobs[index].location,
+                                  date: controller.jobs[index].date!,
+                                  remote: controller.jobs[index].remoteName!,
+                                  image: controller.jobs[index].companyImage!,
+                                  isActive: controller.jobs[index].active == 1
+                                      ? true
+                                      : false,
+                                  companyId: controller.jobs[index].companyId!,
+                                  jobId: controller.jobs[index].id!,
+                                  
+                                );
+                              },
+                            )
                     ],
                   ),
       ),

@@ -16,6 +16,7 @@ class TaskModel {
   int? active;
   int? majorId;
   int? roleId;
+  bool? isFavourite;
 
   TaskModel(
       {this.id,
@@ -34,6 +35,7 @@ class TaskModel {
       this.createdAt,
       this.roleId,
       this.majorName,
+      this.isFavourite,
       this.updatedAt});
 
   TaskModel.fromJson(Map<String, dynamic> json) {
@@ -42,18 +44,19 @@ class TaskModel {
     image = json['image'];
     userId = json['user_id'];
     taskTitle = json['task_title'];
-    aboutTask = json['about_task'];
+    aboutTask = json['description'];
     requirements = json['requirements'];
     additionalInformation = json['additional_information'];
-    taskDuration = json['task_duration'];
+    taskDuration = json['duration'];
     budgetMin = json['budget_min'];
     budgetMax = json['budget_max'];
-    createdAt = json['created_at'];
+    createdAt = json['date'];
     updatedAt = json['updated_at'];
     majorName = json["major_name"];
     active = json['active'];
     majorId = json["major_id"];
     roleId = json['user_role'];
+    isFavourite = json['favourite'];
   }
 
   Map<String, dynamic> toJson() {
@@ -63,18 +66,19 @@ class TaskModel {
     data['image'] = this.image;
     data['user_id'] = this.userId;
     data['task_title'] = this.taskTitle;
-    data['about_task'] = this.aboutTask;
+    data['description'] = this.aboutTask;
     data['requirements'] = this.requirements;
     data['additional_information'] = this.additionalInformation;
     data['task_duration'] = this.taskDuration;
     data['budget_min'] = this.budgetMin;
     data['budget_max'] = this.budgetMax;
-    data['created_at'] = this.createdAt;
+    data['date'] = this.createdAt;
     data['updated_at'] = this.updatedAt;
     data['major_name'] = this.majorName;
     data['active'] = this.active;
     data['major_id'] = this.majorId;
-    data ['user_role']= this.roleId;
+    data['user_role'] = this.roleId;
+    data['favourite'] = this.isFavourite;
     return data;
   }
 }
