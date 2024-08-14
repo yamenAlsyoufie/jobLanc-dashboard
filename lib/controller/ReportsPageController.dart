@@ -47,7 +47,7 @@ class ReportsPagecontrollerImpl extends ReportsPagecontroller {
     if (formdata!.validate()) {
       sendReplyStatus = StatusRequest.loading;
       var response = await reportBack.sendReply(token,
-          {"title": title.text, "body": body.text, "user_id": id.toString()});
+          {"title": title.text, "body": body.text, "report_id": id.toString()});
       sendReplyStatus = handelingData(response);
       Get.back();
       if (StatusRequest.success == sendReplyStatus) {

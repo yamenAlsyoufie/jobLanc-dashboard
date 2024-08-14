@@ -19,13 +19,24 @@ class ReportsPage extends StatelessWidget {
           builder: (controller) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 10.h,
+              ),
               SafeArea(
-                  child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
-                child: Text(
-                  "reports".tr,
-                  style: TextStyles.w50018(context),
-                ),
+                  child: Row(
+                children: [
+                  SizedBox(width: 10.w),
+                  GestureDetector(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: Icon(Icons.arrow_back_outlined)),
+                  SizedBox(width: 10.w),
+                  Text(
+                    "75".tr,
+                    style: TextStyles.w50019(context),
+                  ),
+                ],
               )),
               ListView.builder(
                   shrinkWrap: true,

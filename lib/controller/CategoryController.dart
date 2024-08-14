@@ -54,7 +54,7 @@ class CategoryController extends GetxController {
       }
       addCategoryStatus = StatusRequest.loading;
       var response = await categoryback.postCategory(
-          token, image, {"name_EN": englishName, "name_AR": arabicName});
+          token, image, {"name_EN": englishName.text, "name_AR": arabicName.text});
       addCategoryStatus = handelingData(response);
       if (StatusRequest.success == addCategoryStatus) {
         if (response['status'] == "success") {

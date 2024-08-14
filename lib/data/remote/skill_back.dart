@@ -4,21 +4,21 @@ import 'package:projectoneuniversity/core/constants/links.dart';
 class SkillBack {
   Crud crud;
   SkillBack(this.crud);
-  getSkills(String token, String link, Map data) async {
+  getSkillsTags(String token, String link, Map data) async {
     var response = await crud.postAndGetData(
         link,
         data,
         {'Authorization': 'Bearer $token', 'accept': 'application/json'},
         null,
-        true,
+        false,
         false,
         null);
     return response.fold((l) => l, (r) => r);
   }
 
-  addSkill(String token, Map data) async {
+  addSkillTag(String token, Map data,String link) async {
     var response = await crud.postAndGetData(
-        AppLinks.skills,
+        link,
         data,
         {'Authorization': 'Bearer $token', 'accept': 'application/json'},
         null,

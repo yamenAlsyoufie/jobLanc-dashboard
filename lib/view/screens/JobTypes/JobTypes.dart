@@ -40,7 +40,6 @@ class JobTypes extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-
               AddJobType(controller: controller),
               SizedBox(
                 height: 20.h,
@@ -57,19 +56,32 @@ class JobTypes extends StatelessWidget {
                       alignment: AlignmentDirectional.centerStart,
                       margin:
                           EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
-                      padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 10.w, vertical: 10.h),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
                           color:
                               Theme.of(context).colorScheme.primaryContainer),
                       child: Column(
-                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(Icons.delete_outline,size: 17.sp,),
-                          SizedBox(height: 5.h,),
-                          Text(controller.data[index]['name_EN'],style: TextStyles.w50012(context),),
-                          SizedBox(height: 5.h,),
-                          Text(controller.data[index]['name_AR'],style: TextStyles.w50012(context),),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 5.h, vertical: 8.w),
+                                child: Text(
+                                  controller.data[index]['name'],
+                                  style: TextStyles.w50012(context),
+                                ),
+                              ),
+                              Icon(
+                                Icons.delete_outline,
+                                size: 17.sp,
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     );

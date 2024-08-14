@@ -6,11 +6,11 @@ class Statisticback {
   Statisticback(this.crud);
   getStatistics(var token, String lang, Map data) async {
     var response = await crud.postAndGetData(
-        AppLinks.IP+"?lang="+lang,
+        "${AppLinks.monthlyReport}?lang=$lang",
         data,
         {'Authorization': 'Bearer $token', 'accept': 'application/json'},
         null,
-        true,
+        false,
         false,
         null);
     return response.fold((l) => l, (r) => r);

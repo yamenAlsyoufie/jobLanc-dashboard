@@ -9,6 +9,7 @@ import 'package:projectoneuniversity/view/screens/ChangeLanguage.dart';
 import 'package:projectoneuniversity/view/screens/JobTypes/JobTypes.dart';
 import 'package:projectoneuniversity/view/screens/ReportsPage.dart';
 import 'package:projectoneuniversity/view/screens/Skills/skills.dart';
+import 'package:projectoneuniversity/view/screens/tags_page.dart';
 import 'package:projectoneuniversity/view/widgets/divider.dart';
 import 'package:projectoneuniversity/view/widgets/list_tile.dart';
 
@@ -134,6 +135,16 @@ class SettingsPageView extends StatelessWidget {
                         leadingIcon: null,
                         trailingIcon: Icons.arrow_forward_ios,
                         listText: "32".tr),
+                  ),
+                  MyDivider(),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(TagsPage());
+                    },
+                    child: ListTiles(
+                        leadingIcon: null,
+                        trailingIcon: Icons.arrow_forward_ios,
+                        listText: "74".tr),
                   ),
                 ],
               ),

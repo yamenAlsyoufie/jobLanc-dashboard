@@ -4,14 +4,21 @@ import 'package:projectoneuniversity/core/constants/links.dart';
 class JobTypeBack {
   Crud crud;
   JobTypeBack(this.crud);
-  addJobType(String token,Map data) async {
+  addJobType(String token, Map data) async {
     var response = await crud.postAndGetData(
-        AppLinks.jobType, data, {}, null, true, false, null);
+        AppLinks.jobExperience,
+        data,
+        {'Authorization': 'Bearer $token', 'accept': 'application/json'},
+        null,
+        true,
+        false,
+        null);
     return response.fold((l) => l, (r) => r);
   }
-  getJobTypes(String token ) async {
+
+  getJobTypes(String token, String lang) async {
     var response = await crud.postAndGetData(
-        AppLinks.jobType,
+        AppLinks.jobExperience + "?lang=" + lang,
         {},
         {'Authorization': 'Bearer $token', 'accept': 'application/json'},
         null,

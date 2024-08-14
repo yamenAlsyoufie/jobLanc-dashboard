@@ -30,9 +30,10 @@ class SkillController extends GetxController {
     update();
     if (serchSkill.text != "") {
       statusRequest = StatusRequest.loading;
-      var response = await skillBack.getSkills(token,
-          "${AppLinks.IP}/api/skills/search", {"search": serchSkill.text});
+      var response = await skillBack.getSkillsTags(token,
+          "${AppLinks.IP}/api/skills/search?search=${serchSkill.text}", {});
       statusRequest = handelingData(response);
+      print(statusRequest);
       update();
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
@@ -48,7 +49,8 @@ class SkillController extends GetxController {
     if (formData!.validate()) {
       addStatusRequest = StatusRequest.loading;
       animationedAlert(AppAnimations.loadings, "61".tr);
-      var response = await skillBack.addSkill(token, {"name": addedSkill.text});
+      var response = await skillBack.addSkillTag(
+          token, {"name": addedSkill.text}, AppLinks.skills);
       addStatusRequest = handelingData(response);
       Get.back();
       if (StatusRequest.success == addStatusRequest) {

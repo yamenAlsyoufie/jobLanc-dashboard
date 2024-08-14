@@ -68,7 +68,7 @@ class AddJobType extends StatelessWidget {
                           hintText: "53".tr,
                           labelText: "",
                           iconData: null,
-                          controller: controller.englishName,
+                          controller: controller.arabicName,
                           min: 3,
                           max: 15,
                           isBorder: true,

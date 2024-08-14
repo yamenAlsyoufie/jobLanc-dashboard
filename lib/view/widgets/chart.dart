@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class Chart extends StatelessWidget {
-  final double ordersFirstWeek;
-  final double ordersSecondWeek;
-  final double ordersThirdWeek;
-  final double ordersFourthWeek;
+  final int ordersFirstWeek;
+  final int ordersSecondWeek;
+  final int ordersThirdWeek;
+  final int ordersFourthWeek;
 
   const Chart(
       {super.key,
@@ -59,25 +59,25 @@ class Chart extends StatelessWidget {
               barsSpace: 2,
               barRods: [
                 BarChartRodData(
-                    toY: ordersFirstWeek,
+                    toY: ordersFirstWeek.toDouble(),
                     width: 20,
                     borderRadius: BorderRadius.circular(5))
               ]),
           BarChartGroupData(x: 2, barsSpace: 5, barRods: [
             BarChartRodData(
-                toY: ordersSecondWeek,
+                toY: ordersSecondWeek.toDouble(),
                 width: 20,
                 borderRadius: BorderRadius.circular(5))
           ]),
           BarChartGroupData(x: 3, barsSpace: 5, barRods: [
             BarChartRodData(
-                toY: ordersThirdWeek,
+                toY: ordersThirdWeek.toDouble(),
                 width: 20,
                 borderRadius: BorderRadius.circular(5))
           ]),
           BarChartGroupData(x: 4, barsSpace: 5, barRods: [
             BarChartRodData(
-                toY: ordersFourthWeek,
+                toY: ordersFourthWeek.toDouble(),
                 width: 20,
                 borderRadius: BorderRadius.circular(5))
           ]),

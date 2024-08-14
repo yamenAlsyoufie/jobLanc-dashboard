@@ -88,7 +88,7 @@ class Skills extends StatelessWidget {
                             children: [
                               Text(
                                 controller.skills[index]['name'],
-                                style: TextStyles.w50012(context),
+                                style: TextStyles.w50013(context),
                               ),
                               GestureDetector(
                                 onTap: () {

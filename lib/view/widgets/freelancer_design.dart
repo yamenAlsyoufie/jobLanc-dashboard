@@ -4,6 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/core/constants/colors.dart';
+import 'package:projectoneuniversity/core/constants/links.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
 import 'package:projectoneuniversity/core/functions/dimenesions.dart';
 
@@ -55,11 +56,11 @@ class FreeLancerDesign extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(30),
                       child: 
-                      // Image.network(
-                      //   image[0] == "h" ? image : AppLinks.IP  + image,
-                      //   fit: BoxFit.cover,
-                      // ),
-                      Image.asset(image)
+                      Image.network(
+                        image[0] == "h" ? image : AppLinks.IP  + image,
+                        fit: BoxFit.cover,
+                      ),
+                      
                     ),
                   ),
                   SizedBox(
