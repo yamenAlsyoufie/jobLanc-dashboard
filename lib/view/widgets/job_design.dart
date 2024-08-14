@@ -3,12 +3,11 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:joblance/core/constants/colors.dart';
-import 'package:joblance/core/constants/images.dart';
-import 'package:joblance/core/constants/links.dart';
-import 'package:joblance/core/constants/text_styles.dart';
-import 'package:joblance/core/functions/dimenesions.dart';
-import 'package:joblance/view/screens/job_info/job_info.dart';
+import 'package:projectoneuniversity/core/constants/colors.dart';
+import 'package:projectoneuniversity/core/constants/links.dart';
+import 'package:projectoneuniversity/core/constants/text_styles.dart';
+import 'package:projectoneuniversity/core/functions/dimenesions.dart';
+import 'package:projectoneuniversity/view/screens/JobView/job_info.dart';
 
 class JobDesign extends StatelessWidget {
   final String jobTitle;
@@ -105,27 +104,27 @@ class JobDesign extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Align(
-                    alignment: AlignmentDirectional.centerEnd,
-                    child: isFavourite != null
-                        ? GestureDetector(
-                            onTap: onFavouriteTap,
-                            child: Container(
-                                width: 20.w,
-                                height: 20.h,
-                                margin: EdgeInsets.only(bottom: 10.h),
-                                child: Image.asset(
-                                  AppImages.save,
-                                  fit: BoxFit.fill,
-                                  color: isFavourite!
-                                      ? Colors.red[800]
-                                      : Theme.of(context)
-                                          .colorScheme
-                                          .onSecondary,
-                                )),
-                          )
-                        : null,
-                  ),
+                  // Align(
+                  //   alignment: AlignmentDirectional.centerEnd,
+                  //   child: isFavourite != null
+                  //       ? GestureDetector(
+                  //           onTap: onFavouriteTap,
+                  //           child: Container(
+                  //               width: 20.w,
+                  //               height: 20.h,
+                  //               margin: EdgeInsets.only(bottom: 10.h),
+                  //               child: Image.asset(
+                  //                 AppImages.save,
+                  //                 fit: BoxFit.fill,
+                  //                 color: isFavourite!
+                  //                     ? Colors.red[800]
+                  //                     : Theme.of(context)
+                  //                         .colorScheme
+                  //                         .onSecondary,
+                  //               )),
+                  //         )
+                  //       : null,
+                  // ),
                   SizedBox(
                     height: 20.h,
                   ),

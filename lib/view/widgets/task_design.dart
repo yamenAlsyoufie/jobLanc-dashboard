@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:projectoneuniversity/core/constants/colors.dart';
+import 'package:projectoneuniversity/core/constants/links.dart';
+
+import '../../core/constants/text_styles.dart';
+import '../screens/TaskView/task_page.dart';
 
 
 class TaskDesign extends StatelessWidget {
@@ -139,33 +144,33 @@ class TaskDesign extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Align(
-                        alignment: AlignmentDirectional.centerEnd,
-                        child: isFavourite != null
-                            ? GestureDetector(
-                                onTap: onFavouriteTap,
-                                child: isFavourite != null
-                                    ? GestureDetector(
-                                        onTap: onFavouriteTap,
-                                        child: Container(
-                                            width: 20.w,
-                                            height: 20.h,
-                                            margin:
-                                                EdgeInsets.only(bottom: 10.h),
-                                            child: Image.asset(
-                                              AppImages.save,
-                                              fit: BoxFit.fill,
-                                              color: isFavourite!
-                                                  ? Colors.red[800]
-                                                  : Theme.of(context)
-                                                      .colorScheme
-                                                      .onSecondary,
-                                            )),
-                                      )
-                                    : null,
-                              )
-                            : null,
-                      ),
+                      // Align(
+                      //   alignment: AlignmentDirectional.centerEnd,
+                      //   child: isFavourite != null
+                      //       ? GestureDetector(
+                      //           onTap: onFavouriteTap,
+                      //           child: isFavourite != null
+                      //               ? GestureDetector(
+                      //                   onTap: onFavouriteTap,
+                      //                   child: Container(
+                      //                       width: 20.w,
+                      //                       height: 20.h,
+                      //                       margin:
+                      //                           EdgeInsets.only(bottom: 10.h),
+                      //                       child: Image.asset(
+                      //                         AppImages.save,
+                      //                         fit: BoxFit.fill,
+                      //                         color: isFavourite!
+                      //                             ? Colors.red[800]
+                      //                             : Theme.of(context)
+                      //                                 .colorScheme
+                      //                                 .onSecondary,
+                      //                       )),
+                      //                 )
+                      //               : null,
+                      //         )
+                      //       : null,
+                      // ),
                       SizedBox(
                         height: 15,
                       ),
