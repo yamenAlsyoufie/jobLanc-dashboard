@@ -18,5 +18,8 @@ class AppLinks {
   static String get jobExperience => "$IP/api/experienceLevel";
   static String get monthlyReport => "$IP/api/monthly_report";
   static String get budget => "$IP/api/budget";
+  static String get review => "$IP/api/review";
+    static String get rate => "$IP/api/evaluation";
+
 }
 

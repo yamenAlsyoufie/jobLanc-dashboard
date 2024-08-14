@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:projectoneuniversity/controller/profiles_controller/company_profile_controller.dart';
 import 'package:projectoneuniversity/core/constants/text_styles.dart';
-import 'package:projectoneuniversity/data/Statics/static.dart';
 import 'package:projectoneuniversity/view/widgets/divider.dart';
 import 'package:projectoneuniversity/view/widgets/job_design.dart';
 import 'package:projectoneuniversity/view/widgets/project_design.dart';
@@ -20,6 +19,7 @@ class CompanyTabBar extends StatelessWidget {
     return TabBarView(children: [
       jobs(
         context,
+        controller
       ),
       tasks(context, controller),
       aboutCompany(context, controller),
@@ -119,7 +119,7 @@ Widget aboutCompany(
   );
 }
 
-Widget jobs(BuildContext context) {
+Widget jobs(BuildContext context,CompanyProfileControllerImpl controller) {
   return SingleChildScrollView(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -147,11 +147,7 @@ Widget jobs(BuildContext context) {
               isActive: controller.jobs[index].active == 1 ? true : false,
               companyId: controller.jobs[index].companyId!,
               jobId: controller.jobs[index].id!,
-              isFavourite: controller.jobs[index].isFavorite,
-              onFavouriteTap: () {
-                controller.addRemoveFavourite(
-                    controller.jobs[index].id!, false, index);
-              },
+              
             );
           },
         )
