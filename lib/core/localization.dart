@@ -104,6 +104,7 @@ class localization extends Translations {
           "77": "Freelancers this month",
           "78":"Wallet have been charged",
           "79": "Couldn't charge wallet",
+          "80":"Prices"
         },
         'ar': {
           //choose language page in arabic

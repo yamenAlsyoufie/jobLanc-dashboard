@@ -20,6 +20,7 @@ class AppLinks {
   static String get budget => "$IP/api/budget";
   static String get review => "$IP/api/review";
     static String get rate => "$IP/api/evaluation";
+    static String get price => "$IP/api/price";
 
 }
 

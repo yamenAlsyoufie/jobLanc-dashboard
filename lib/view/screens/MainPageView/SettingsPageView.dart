@@ -9,6 +9,7 @@ import 'package:projectoneuniversity/view/screens/ChangeLanguage.dart';
 import 'package:projectoneuniversity/view/screens/JobTypes/JobTypes.dart';
 import 'package:projectoneuniversity/view/screens/ReportsPage.dart';
 import 'package:projectoneuniversity/view/screens/Skills/skills.dart';
+import 'package:projectoneuniversity/view/screens/prices_page.dart';
 import 'package:projectoneuniversity/view/screens/tags_page.dart';
 import 'package:projectoneuniversity/view/widgets/divider.dart';
 import 'package:projectoneuniversity/view/widgets/list_tile.dart';
@@ -119,12 +120,22 @@ class SettingsPageView extends StatelessWidget {
                   MyDivider(),
                   GestureDetector(
                     onTap: () {
-                      Get.to(JobTypes());
+                      Get.to(const JobTypes());
                     },
                     child: ListTiles(
                         leadingIcon: null,
                         trailingIcon: Icons.arrow_forward_ios,
                         listText: "31".tr),
+                  ),
+                   MyDivider(),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(const PricesPage());
+                    },
+                    child: ListTiles(
+                        leadingIcon: null,
+                        trailingIcon: Icons.attach_money,
+                        listText: "80".tr),
                   ),
                   MyDivider(),
                   GestureDetector(
